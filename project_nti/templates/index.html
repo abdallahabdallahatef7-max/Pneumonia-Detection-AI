@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneumonia Detection AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Include BoxIcons for icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class='bx bx-pulse'></i>
+                <h1>NeuroRad AI</h1>
+            </div>
+            <p>Advanced Deep Learning model for instant Pneumonia detection from Chest X-Rays.</p>
+        </header>
+
+        <main>
+            <div class="upload-section" id="upload-box">
+                <input type="file" id="file-input" accept="image/*" hidden>
+                <div class="upload-content">
+                    <i class='bx bx-cloud-upload upload-icon'></i>
+                    <h3>Drag & Drop your X-Ray</h3>
+                    <p>or <span class="browse-btn" id="browse-btn">browse files</span></p>
+                    <small>Supports: JPG, JPEG, PNG</small>
+                </div>
+            </div>
+
+            <div class="preview-section hidden" id="preview-section">
+                <div class="image-container">
+                    <img id="image-preview" src="" alt="X-Ray Preview">
+                    <button class="remove-btn" id="remove-btn" title="Remove image">
+                        <i class='bx bx-x'></i>
+                    </button>
+                </div>
+                
+                <div class="action-container">
+                    <button id="analyze-btn" class="primary-btn">
+                        <span>Analyze Scan</span>
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="loading-state hidden" id="loading-state">
+                <div class="spinner"></div>
+                <p>Analyzing scan through Neural Networks...</p>
+            </div>
+
+            <div class="result-section hidden" id="result-section">
+                <h3 class="result-title">Analysis Complete</h3>
+                
+                <div class="result-card" id="result-card">
+                    <div class="result-icon" id="result-icon">
+                        <!-- Icon injected by JS -->
+                    </div>
+                    <div class="result-details">
+                        <h2 id="prediction-text">--</h2>
+                        <div class="probability-bar">
+                            <div class="fill" id="probability-fill"></div>
+                        </div>
+                        <p class="probability-text">Confidence: <span id="probability-value">--</span>%</p>
+                    </div>
+                </div>
+                
+                <button id="reset-btn" class="secondary-btn">Analyze Another Scan</button>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Built with FastAPI & TensorFlow</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
