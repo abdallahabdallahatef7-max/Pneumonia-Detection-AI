@@ -11,7 +11,7 @@ class prediction:
         current_dir = os.path.dirname(os.path.abspath(__file__))
         root_dir = os.path.abspath(os.path.join(current_dir, '..', '..'))
         model_path = os.path.join(root_dir, 'notebooks', 'model.keras')
-        self.model = load_model(model_path)
+        self.model = load_model(model_path, custom_objects={'mymodel': mymodel})
 
     def _get_result(self, prediction_value):
         if prediction_value > 0.5:

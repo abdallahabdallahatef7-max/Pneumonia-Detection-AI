@@ -1,70 +1,106 @@
-# Pneumonia Detection AI
+# 🏥 Pneumonia Detection AI - Production Grade Service
 
-A production-ready deep learning service that detects Pneumonia from Chest X-Ray images. This project provides a powerful, modern Web UI powered by FastAPI and a Keras/TensorFlow model.
+[![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)](https://www.tensorflow.org/)
+[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
-## Features
-- **Deep Learning Model:** A Convolutional Neural Network (CNN) built with TensorFlow/Keras to classify Chest X-Ray images.
-- **FastAPI Backend:** Fast, asynchronous backend to handle image uploads and model inference.
-- **Modern Web UI:** A premium, responsive front-end interface featuring drag-and-drop uploads, sleek animations, and dynamic probability bars.
-- **Docker Support:** Fully containerized application for easy deployment across environments.
+An advanced, production-ready medical diagnostic service that leverages Deep Learning to detect Pneumonia from Chest X-Ray images. This system combines a powerful **CNN (Convolutional Neural Network)** with a modern, high-performance **FastAPI** backend and a sleek **Glassmorphic** web interface.
 
-## Project Structure
-```
+---
+
+## ✨ Key Features
+
+- 🧠 **High-Accuracy CNN:** Custom-built model with multiple convolutional layers for robust feature extraction.
+- ⚡ **High Performance:** Built on FastAPI, delivering ultra-fast asynchronous inference.
+- 🎨 **Premium UI:** Modern, responsive web interface featuring:
+    - Drag-and-drop file uploads.
+    - Real-time result visualization with probability bars.
+    - Glassmorphism design language.
+    - Smooth micro-animations.
+- 📦 **Containerized:** Ready for instant deployment using Docker.
+- 🛡️ **Scalable Architecture:** Modular project structure following industry best practices.
+
+---
+
+## 📂 Project Architecture
+
+```bash
 project_nti/
 ├── src/
 │   ├── components/
-│   │   ├── data_transformation.py # Image preprocessing logic
-│   │   ├── model_prediction.py    # Inference logic
-│   │   └── structure_model.py     # CNN Architecture definition
+│   │   ├── data_transformation.py # Image preprocessing & Normalization
+│   │   ├── model_prediction.py    # Core Prediction Engine
+│   │   └── structure_model.py     # CNN Model Architecture (Keras)
 │   └── controller/
-│       └── image_controller.py    # FastAPI routes for image upload
-├── notebooks/
-│   └── model.keras                # Trained Keras model
+│       └── image_controller.py    # API Endpoint Management
 ├── static/
-│   ├── script.js                  # Frontend JS logic
-│   └── style.css                  # Frontend styling (Glassmorphism)
+│   ├── script.js                  # Dynamic UI Interactions
+│   └── style.css                  # Modern Glassmorphic Styling
 ├── templates/
-│   └── index.html                 # Frontend HTML view
-├── main.py                        # FastAPI entry point
-├── requirements.txt               # Python dependencies
-├── Dockerfile                     # Docker configuration
-└── README.md
+│   └── index.html                 # Main Web Interface
+├── notebooks/
+│   └── model.keras                # Pre-trained Weights (Keras v3)
+├── main.py                        # Application Entry Point
+├── Dockerfile                     # Deployment Container
+└── requirements.txt               # Dependency Management
 ```
 
-## Running Locally
+---
 
-### 1. Create a Virtual Environment
+## 🚀 Getting Started
+
+### 1. Environment Setup
+Clone the repository and create a virtual environment:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-### 2. Install Dependencies
+### 2. Installation
+Install the required production dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Run the Server
+### 3. Launching the Application
+Start the uvicorn server:
 ```bash
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
-Open your browser and navigate to `http://localhost:8000` to interact with the UI.
+Visit `http://localhost:8000` in your browser.
 
-## Running with Docker
+---
 
-### 1. Build the Docker Image
+## 🐳 Docker Deployment
+
+To run the application in a completely isolated environment:
+
 ```bash
+# Build the image
 docker build -t pneumonia-detection-ai .
-```
 
-### 2. Run the Docker Container
-```bash
+# Run the container
 docker run -p 8000:8000 pneumonia-detection-ai
 ```
-Open your browser and navigate to `http://localhost:8000` to interact with the UI.
 
-## Technologies Used
-- **Backend:** Python, FastAPI, Uvicorn
-- **Machine Learning:** TensorFlow, Keras, OpenCV, Numpy
-- **Frontend:** HTML5, CSS3, JavaScript (Vanilla)
-- **Deployment:** Docker
+---
+
+## 🛠️ Tech Stack
+
+- **Core:** Python 3.12
+- **Deep Learning:** TensorFlow 2.18, Keras 3
+- **Image Processing:** OpenCV
+- **Backend:** FastAPI, Uvicorn, Jinja2
+- **Frontend:** HTML5, CSS3 (Vanilla), JavaScript (ES6+)
+
+---
+
+## 📝 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+<p align="center">
+  Developed with ❤️ for Medical AI Research
+</p>

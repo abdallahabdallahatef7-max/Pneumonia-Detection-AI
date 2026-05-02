@@ -1,9 +1,12 @@
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 from tensorflow.keras.models import Model
 
+from tensorflow.keras.saving import register_keras_serializable
+
+@register_keras_serializable(package="Custom", name="mymodel")
 class mymodel(Model):
-  def __init__(self) -> None:
-     super().__init__()
+  def __init__(self, **kwargs) -> None:
+     super().__init__(**kwargs)
 
      self.conv1=Conv2D(32,(3,3),padding="same",activation="relu",input_shape=(150,150,1))
      self.maxpool1=MaxPooling2D((2,2))
